@@ -11,7 +11,7 @@ xTest <- read.table("UCI HAR Dataset/test/X_test.txt")
 yTest <- read.table("UCI HAR Dataset/test/y_test.txt")
 subjectTest <- read.table("UCI HAR Dataset/test/subject_test.txt")
 
-# create merged data set
+# Merge data
 x <- rbind(xTrain, xTest)
 y <- rbind(yTrain, yTest)
 data <- rbind(subjectTrain, subjectTest)
@@ -34,6 +34,6 @@ names(data) <- "subject"
 fullData <- cbind(x, y, data)
 
 #From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-averagesData <- aggregate(x = x,  by=fullData[c("subject","activity")], FUN=mean)
+results <- aggregate(x = x,  by=fullData[c("subject","activity")], FUN=mean)
 
-write.table(averagesData, "averages_data.txt", row.name = FALSE)
+write.table(results, "results.txt", row.name = FALSE)
