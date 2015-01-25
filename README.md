@@ -2,7 +2,7 @@
 ##Project
 ###Made by Gleb Perelman
 
-##Coursera description:
+##Coursera description
 You should create one R script called run_analysis.R that does the following.
 
 Merges the training and the test sets to create one data set.
